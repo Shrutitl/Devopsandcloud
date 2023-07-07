@@ -6,7 +6,7 @@ pipeline {
   }
   
 stages {
-stage('Part 2 - app build using maven') {
+stage('Part 2 - Pet clinic build using maven') {
       steps {
         script {
             sh "mvn clean"
