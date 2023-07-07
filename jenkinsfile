@@ -14,5 +14,8 @@ stage('Part 2 - Maven Comple and Build Artifact') {
             sh "mvn compile"
             sh "mvn package"
           }
-}
-}
+        }
+      }
+    } 
+   }
+ }
