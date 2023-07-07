@@ -6,7 +6,7 @@ pipeline {
   }
   
 stages {
-stage('Part 2 - Maven Comple and Build Artifact') {
+stage('Part 2 - app build using maven') {
       steps {
         script {
             sh "mvn clean"
