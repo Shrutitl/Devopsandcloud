@@ -5,7 +5,7 @@ pipeline {
     AWS_SECRETOBJ = credentials('AWS_SECRET_ACCESS_KEY')
   }
   stages {
-    stage('Create and Publish AMI') {
+    stage('Create and Publish AMI using Packer') {
       steps {
         script {
           env.AWS_ACCESS_KEY_ID = "${AWS_ACCESSOBJ_PSW}"
