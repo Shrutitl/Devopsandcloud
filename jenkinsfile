@@ -4,9 +4,20 @@ pipeline {
     maven 'Maven-3.6.3'
     jdk 'open-jdk17'
   }
-  
+
+ environment {
+    SONAR_KEY = credentials('SONAR_JENKINS')
+ }
+
 stages {
-stage('Part 2 - Pet clinic build using maven') {
+  stage('Repo Scan using Sonarcloud'){
+    steps {
+     env.SONAR_TOKEN = "${SONAR_KEY_PSW}"
+     sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -D sonar.projectKey=Shrutitl_Devopsandcloud"
+      }
+
+  }
+   stage('Pet clinic build using maven') {
       steps {
         script {
             sh "mvn clean"
