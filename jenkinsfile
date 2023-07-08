@@ -10,14 +10,14 @@ pipeline {
  }
 
 stages {
-  stage('Repo Scan using Sonarcloud'){
-    step {
-     env.SONAR_TOKEN = "${SONAR_CLOUDOBJ_PSW}"
-     sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -D sonar.projectKey=Shrutitl_Devopsandcloud"
-      }
+     stage('Repo Scan using Sonarcloud'){
+         steps {
+          env.SONAR_TOKEN = "${SONAR_CLOUDOBJ_PSW}"
+          sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -D sonar.projectKey=Shrutitl_Devopsandcloud"
+         }
+       }
 
-  }
-   stage('Pet clinic build using maven') {
+    stage('Pet clinic build using maven') {
       steps {
         script {
             sh "mvn clean"
