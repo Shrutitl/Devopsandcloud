@@ -6,13 +6,13 @@ pipeline {
   }
 
  environment {
-    SONAR_CLOUDOBJ = credentials('SONAR_JENKINS')
+    SONAR_CLOUDOBJ = credentials('SONAR-KEY')
  }
 
 stages {
      stage('Repo Scan using Sonarcloud'){
          steps {
-          env.SONAR_JENKINS = "${SONAR_CLOUDOBJ_PSW}"
+          env.SONAR-KEY = "${SONAR_CLOUDOBJ_PSW}"
           sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -D sonar.projectKey=Shrutitl_Devopsandcloud"
          }
        }
