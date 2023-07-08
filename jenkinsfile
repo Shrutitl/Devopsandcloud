@@ -10,7 +10,7 @@ pipeline {
  }
 
 stages {
-     stage('Repo Scan using Sonarcloud'){
+     stage('Repo Scan using  Sonarcloud'){
          steps {
           env.SONAR-KEY = "${SONAR_CLOUDOBJ_PSW}"
           sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -D sonar.projectKey=Shrutitl_Devopsandcloud"
