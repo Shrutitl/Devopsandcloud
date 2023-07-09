@@ -7,12 +7,14 @@ pipeline {
 
  environment {
     SONAR_TOKEN = credentials('SONAR_OBJ')
+    SONAR_CLOUDOBJ = credentials('SONAR_KEY')
  }
 
 stages {
      stage('Repo Scan using  Sonarcloud'){
          steps {
            script{
+          env.SONAR_KEY= "${SONAR_CLOUDOBJ_PSW}"
           env.SONAR_TOKEN = "${SONAR_TOKEN}"
           sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -D sonar.projectKey=Shrutitl_Devopsandcloud"
          }
